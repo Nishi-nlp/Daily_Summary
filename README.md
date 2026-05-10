@@ -54,7 +54,7 @@ ActivityWatch logs + Git diff + OpenAI API + Obsidian を使って
 ### 1. Clone the repository
 
 ```bash
-git https://github.com/Nishi-nlp/Daily_Summmary.git
+git clone https://github.com/Nishi-nlp/Daily_Summmary.git
 cd Daily_Summmary
 ```
 
