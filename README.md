@@ -54,8 +54,8 @@ ActivityWatch logs + Git diff + OpenAI API + Obsidian を使って
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/yourname/yourrepo.git
-cd yourrepo
+git https://github.com/Nishi-nlp/Daily_Summmary.git
+cd Daily_Summmary
 ```
 
 ### 2. Install dependencies
@@ -79,4 +79,5 @@ uv run daily_summary.py
 ```
 
 ## License
+
 MIT
