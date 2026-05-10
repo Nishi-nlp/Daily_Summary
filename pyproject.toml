@@ -1,0 +1,27 @@
+[project]
+name = "daily-summary"
+version = "0.1.0"
+description = "Generate daily summaries from ActivityWatch logs using OpenAI API and save them to Obsidian"
+readme = "README.md"
+requires-python = ">=3.11"
+
+dependencies = [
+    "openai",
+    "python-dotenv",
+    "requests",
+]
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+
+[tool.ruff.lint]
+select = [
+    "E",  # pycodestyle
+    "F",  # pyflakes
+    "I",  # isort
+]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
