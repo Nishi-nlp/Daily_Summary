@@ -22,6 +22,11 @@ GIT_REPO_PATHS: list[Path] = [
 NOTES_DIR = Path(os.environ.get("NOTES_DIR"))
 
 OUTPUT_DIR = Path(os.environ.get("OUTPUT_DIR", "output_dir"))
+
+# セミコロン区切りで除外ドメインを指定
+_raw_excluded = os.environ.get("EXCLUDED_DOMAINS", "")
+EXCLUDED_DOMAINS: set[str] = {d.strip() for d in _raw_excluded.split(";") if d.strip()}
+
 TODAY = datetime.now().strftime("%Y-%m-%d")
 
 api_key = os.getenv("OPENAI_API_KEY")
@@ -147,7 +152,6 @@ def get_activity_logs() -> str:
 
         # ── ブラウザ閲覧バケット ──
         elif bucket_type in ("web.tab.current", "currently-active-browser-tab"):
-            EXCLUDED_DOMAINS = {"www.youtube.com", "youtube.com", "youtu.be"}
             url_time: dict[str, float] = {}
             for e in events:
                 data = e.get("data", {})
